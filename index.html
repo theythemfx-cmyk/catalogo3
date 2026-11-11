@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>They & Them Bazar Novedades - Catálogo Digital</title>
+    
+    <!-- INICIA CODIGO DE GOOGLE -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PW5XSTNX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+    <!-- FIN DEL CODIGO DE GOOGLE -->
+
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos Globales y Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.5;
+            padding-bottom: 40px;
+            transition: background 0.4s ease;
+        }
+
+        /* --- ESTILOS FESTIVOS DINÁMICOS --- */
+        .festivo-banner {
+            text-align: center;
+            padding: 12px 15px;
+            font-size: 14px;
+            font-weight: 700;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            color: white;
+            position: relative;
+            z-index: 950;
+        }
+
+        /* Contenedor de Animaciones Festivas */
+        .efecto-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 998;
+            overflow: hidden;
+            display: none;
+        }
+        .elemento-animado {
+            position: absolute;
+            top: -50px;
+            user-select: none;
+            animation: caer linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes caer {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateY(50vh) translateX(25px) rotate(12deg); }
+            90% { opacity: 1; }
+            100% { transform: translateY(108vh) translateX(-25px) rotate(-12deg); opacity: 0; }
+        }
+
+        /* Brillo especial 2027 Fin de Año */
+        .texto-luminoso-2027 {
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 8px #ffd700, 0 0 18px #ffd700, 0 0 30px #ffaa00, 0 0 40px #ffffff;
+            letter-spacing: 2px;
+            animation: pulsoBrillo 1.5s infinite alternate;
+        }
+        @keyframes pulsoBrillo {
+            from { transform: scale(0.95); filter: brightness(1); }
+            to { transform: scale(1.1); filter: brightness(1.4); }
+        }
+
+        /* Flameo suave para banderas y personajes */
+        .efecto-flameo {
+            animation: caer linear infinite, flamearBandera 1.2s ease-in-out infinite alternate !important;
+        }
+        @keyframes flamearBandera {
+            0% { transform: skewY(-4deg) scaleX(0.95); }
+            100% { transform: skewY(4deg) scaleX(1.05); }
+        }
+
+        /* Encabezado Principal */
+        .header-wrapper {
+            background-color: #1b2a38;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            transition: background 0.4s ease;
+        }
+        .header-container {
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-logo {
+            width: 190px;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+        }
+        .header-text-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 4px 0;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .header-subtitle {
+            font-size: 13px;
+            color: #d1d5db;
+            margin: 0;
+        }
+
+        /* Banner de Métodos de Pago y Entregas */
+        .info-banner {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: #f3f4f6;
+            padding: 14px 20px;
+            border-bottom: 3px solid #8b00ff;
+            transition: border-color 0.4s ease;
+        }
+        .info-banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            font-size: 13px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .info-item i {
+            font-size: 20px;
+            color: #a78bfa;
+            flex-shrink: 0;
+        }
+        .info-item strong {
+            display: block;
+            color: #fff;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        /* Sección de Búsqueda, Filtros y Carrito */
+        .controls-section {
+            background-color: #2c164a;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+            transition: background 0.4s ease;
+        }
+        .top-bar-controls {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .brand-pills {
+            color: #d8b4fe;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .brand-tag {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2px 8px;
+            border-radius: 12px;
+            color: #f3e8ff;
+        }
+        .btn-cuaderno {
+            background-color: #8b00ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(139, 0, 255, 0.4);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        .btn-cuaderno:hover {
+            background-color: #a124ff;
+            transform: translateY(-2px);
+        }
+        .cart-badge-count {
+            background-color: #ff3b30;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .search-container i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+            font-size: 16px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 18px 12px 48px;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s;
+            background: #ffffff;
+        }
+        .search-input:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.25);
+        }
+
+        .categories-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .category-btn {
+            background-color: #4a2875;
+            color: #e9d5ff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .category-btn:hover, .category-btn.active {
+            background-color: #8b00ff;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(139, 0, 255, 0.4);
+        }
+
+        /* --- CATÁLOGO Y TARJETAS ESTÁNDAR --- */
+        .catalog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #edf2f7;
+            position: relative;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        /* Contenedor de Imagen Estándar */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: #ffffff;
+        }
+        .card img:hover {
+            transform: scale(1.05);
+        }
+        .zoom-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            padding: 6px 9px;
+            border-radius: 50%;
+            font-size: 12px;
+            pointer-events: none;
+            backdrop-filter: blur(2px);
+        }
+
+        .card-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        .card-header-tags {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .card-badge {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .stock-badge {
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+        .stock-disponible { background-color: #dcfce7; color: #16a34a; }
+        .stock-agotado { background-color: #fee2e2; color: #dc2626; }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-description {
+            font-size: 12px;
+            color: #475569;
+            margin-bottom: 16px;
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+        .price-and-qty {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price {
+            font-size: 19px;
+            font-weight: 800;
+            color: #dc2626;
+        }
+        .card-qty-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .card-qty-selector button {
+            background: #f1f5f9;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #334155;
+            transition: background 0.15s;
+        }
+        .card-qty-selector button:hover { background: #e2e8f0; }
+        .card-qty-selector span {
+            padding: 0 8px;
+            font-size: 13px;
+            font-weight: 700;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .card-actions-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 9px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
+        }
+        .btn-whatsapp:hover { background-color: #1eb856; }
+        .btn-add-cart {
+            background-color: #8b00ff;
+            color: white;
+            border: none;
+            padding: 9px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 2px 4px rgba(139, 0, 255, 0.2);
+        }
+        .btn-add-cart:hover { background-color: #7200d1; }
+
+        .card.agotado .btn-add-cart, .card.agotado .card-qty-selector { opacity: 0.5; pointer-events: none; }
+        .card.agotado .btn-whatsapp { background-color: #94a3b8; }
+
+        /* Modal del Carrito de Compras */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            background: white;
+            width: 92%;
+            max-width: 620px;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+        }
+        .modal-header h2 {
+            margin: 0;
+            color: #1e293b;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #64748b;
+        }
+        .modal-body {
+            overflow-y: auto;
+            flex-grow: 1;
+            margin-bottom: 16px;
+            padding-right: 5px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .cart-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-width: 60%;
+        }
+        .cart-item-title { font-weight: 700; font-size: 13px; color: #1e293b; }
+        .cart-item-price { color: #dc2626; font-weight: 700; font-size: 13px; }
+        .cart-item-controls { display: flex; align-items: center; gap: 8px; }
+        .cart-qty-btn { background: #e2e8f0; border: none; width: 26px; height: 26px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #1e293b; }
+        .btn-remove { background: #ef4444 !important; color: white; border: none; width: 28px; height: 28px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-left: 6px; }
+        .modal-footer {
+            border-top: 2px solid #f1f5f9;
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .cart-total { font-size: 18px; font-weight: 800; color: #0f172a; }
+        .btn-checkout {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+        .btn-checkout:hover { background-color: #1eb856; }
+
+        /* --- MODAL DETALLADO DE PRODUCTO (AMPLIADO Y MEJORADO) --- */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            padding: 15px;
+        }
+        .zoom-card-content {
+            background: white;
+            width: 100%;
+            max-width: 820px;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.35);
+            position: relative;
+            animation: zoomIn 0.25s ease;
+            max-height: 92vh;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .zoom-header-bar {
+            background: #1e293b;
+            color: white;
+            padding: 14px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .zoom-header-bar h3 { font-size: 18px; margin: 0; }
+        .zoom-close-btn {
+            background: none; border: none; color: white; font-size: 26px; cursor: pointer;
+        }
+        .zoom-body-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 25px;
+            padding: 26px;
+            align-items: center;
+            overflow-y: auto;
+        }
+        @media (max-width: 680px) {
+            .zoom-body-grid { grid-template-columns: 1fr; padding: 18px; }
+        }
+        .zoom-img-container {
+            width: 100%;
+            height: 300px;
+            background: #f8fafc;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+        }
+        .zoom-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+        .zoom-details-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14.5px;
+            color: #334155;
+            word-break: break-word;
+        }
+        .zoom-details-box p { margin: 0; line-height: 1.6; }
+        .zoom-details-box strong { color: #0f172a; }
+        .zoom-price-tag {
+            font-size: 25px;
+            font-weight: 800;
+            color: #dc2626;
+            margin-top: 8px;
+        }
+
+        /* --- PANEL DE ADMINISTRADOR PRIVADO --- */
+        .admin-trigger {
+            cursor: pointer;
+            color: #fff;
+        }
+        .admin-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+        .admin-box {
+            background: #ffffff;
+            width: 90%;
+            max-width: 450px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .admin-box h3 { margin-bottom: 15px; color: #1e293b; display: flex; align-items: center; gap: 8px; }
+        .admin-box label { display: block; font-size: 13px; font-weight: 600; margin-top: 10px; color: #475569; }
+        .admin-box select, .admin-box input {
+            width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none;
+        }
+        .admin-btn-group {
+            display: flex; gap: 10px; margin-top: 20px;
+        }
+        .admin-btn-save {
+            background: #2563eb; color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; flex: 1;
+        }
+        .admin-btn-close {
+            background: #64748b; color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;
+        }
+
+        /* Footer del Sitio */
+        .footer-site {
+            text-align: center;
+            padding: 25px 20px;
+            background: #1b2a38;
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 40px;
+            border-top: 4px solid #8b00ff;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+        .footer-site strong { color: #fff; }
+
+        /* Adaptación móvil optimizada */
+        @media (max-width: 640px) {
+            .header-container { padding: 12px; gap: 12px; }
+            .header-logo { width: 100px; height: 100px; }
+            .header-title { font-size: 18px; }
+            .header-subtitle { font-size: 11px; }
+            .info-banner-container { grid-template-columns: 1fr; gap: 10px; }
+            .controls-section { padding: 12px; gap: 12px; }
+            .search-input { font-size: 13px; padding: 10px 14px 10px 40px; }
+            .brand-pills { display: none; }
+            .category-btn { padding: 6px 12px; font-size: 12px; }
+            .catalog-container { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; padding: 0 10px; margin: 15px auto; }
+            .image-container { height: 150px; }
+            .card-content { padding: 10px; }
+            .card-title { font-size: 12px; margin-bottom: 6px; }
+            .card-description { font-size: 11px; margin-bottom: 10px; }
+            .price { font-size: 15px; }
+            .btn-add-cart, .btn-whatsapp { padding: 7px 6px; font-size: 11px; }
+            .zoom-img-container { height: 220px; }
+            .zoom-details-box { font-size: 13.5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner y Contenedor de Efectos Festivos Dinámicos -->
+    <div id="festivoBanner" class="festivo-banner"></div>
+    <div id="efectoBox" class="efecto-container"></div>
+
+    <!-- Encabezado Principal -->
+    <header id="headerWrapper" class="header-wrapper">
+        <div class="header-container">
+            <img src="img/logoi.png" alt="They & Them Bazar Novedades" class="header-logo" onerror="this.src='https://placehold.co/190x190/1b2a38/ffffff?text=Logo'">
+            <div class="header-text-group">
+                <h1 class="header-title">They & Them Bazar Novedades</h1>
+                <p class="header-subtitle">Perfumes, cosméticos y productos para el hogar de tus marcas favoritas y más ¡Haz tu pedido desde casa!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Informativo -->
+    <section id="infoBanner" class="info-banner">
+        <div class="info-banner-container">
+            <div class="info-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <div>
+                    <strong>Métodos de Pago</strong>
+                    Efectivo y Transferencia Bancaria Directa
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <strong>Zonas de Entrega</strong>
+                    Quito, Centro, Norte, Valles y puntos de encuentro.
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div>
+                    <strong>Atención Inmediata</strong>
+                    WhatsApp: 0985282615
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de Búsqueda, Filtros y Carrito -->
+    <div id="controlsSection" class="controls-section">
+        <div class="top-bar-controls">
+            <div class="brand-pills">
+                <span class="brand-tag">Yanbal</span>
+                <span class="brand-tag">Ésika</span>
+                <span class="brand-tag">L'Bel</span>
+                <span class="brand-tag">Avon</span>
+                <span class="brand-tag">Cyzone</span>
+                <span class="brand-tag">Boom</span>
+                <span class="brand-tag">Accesorios</span>
+                <span class="brand-tag">Tecnología</span>
+                <span class="brand-tag">Promociones</span>
+            </div>
+            <div class="controls-buttons-group">
+                <button class="btn-cuaderno" onclick="abrirModalCarrito()">
+                    <i class="fa-solid fa-cart-shopping"></i> Carrito 
+                    <span id="contador-carrito" class="cart-badge-count">0</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="buscador" class="search-input" placeholder="Buscar por nombre, código o marca..." onkeyup="filtrarProductos()">
+        </div>
+
+        <div class="categories-nav">
+            <button class="category-btn active" onclick="filtrarCategoria('todos', this)"><i class="fa-solid fa-border-all"></i> Todos</button>
+            <button class="category-btn" onclick="filtrarCategoria('perfumes hombre', this)"><i class="fa-solid fa-mars"></i> Perfumes Hombre</button>
+            <button class="category-btn" onclick="filtrarCategoria('perfumes mujer', this)"><i class="fa-solid fa-venus"></i> Perfumes Mujer</button>
+            <button class="category-btn" onclick="filtrarCategoria('roll_on', this)"><i class="fa-solid fa-spray-can-sparkles"></i> Roll-On</button>
+            <button class="category-btn" onclick="filtrarCategoria('protector solar', this)"><i class="fa-solid fa-sun"></i> Protector Solar</button>
+            <button class="category-btn" onclick="filtrarCategoria('niños', this)"><i class="fa-solid fa-child"></i> Niños</button>
+            <button class="category-btn" onclick="filtrarCategoria('maquillaje', this)"><i class="fa-solid fa-wand-magic-sparkles"></i> Maquillaje</button>
+            <button class="category-btn" onclick="filtrarCategoria('hogar', this)"><i class="fa-solid fa-house"></i> Hogar (Boom)</button>
+            <button class="category-btn" onclick="filtrarCategoria('cuida tu piel', this)"><i class="fa-solid fa-hand-holding-medical"></i> Cuida tu Piel</button>
+            <button class="category-btn" onclick="filtrarCategoria('accesorios', this)"><i class="fa-solid fa-gem"></i> Accesorios</button>
+            <button class="category-btn" onclick="filtrarCategoria('tecnología', this)"><i class="fa-solid fa-laptop"></i> Tecnología</button>
+            <button class="category-btn" onclick="filtrarCategoria('promociones', this)"><i class="fa-solid fa-tag"></i> Promociones</button>
+            <button class="category-btn" onclick="filtrarCategoria('varios', this)"><i class="fa-solid fa-boxes-stacked"></i> Varios</button>
+        </div>
+    </div>
+
+    <!-- Contenedor del Catálogo -->
+    <main class="catalog-container" id="catalogo"></main>
+
+    <!-- Modal del Carrito de Compras -->
+    <div id="modalCarrito" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-cart-shopping"></i> Tu Carrito de Compras</h2>
+                <button class="close-modal" onclick="cerrarModalCarrito()">&times;</button>
+            </div>
+            <div class="modal-body" id="listaCarrito"></div>
+            <div class="modal-footer">
+                <div class="cart-total">Total: $<span id="totalCarrito">0.00</span></div>
+                <button class="btn-checkout" onclick="enviarPedidoWhatsApp()">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detallado de Producto -->
+    <div id="zoomModal" class="zoom-modal" onclick="cerrarZoomFuera(event)">
+        <div class="zoom-card-content">
+            <div class="zoom-header-bar">
+                <h3 id="zoomTituloModal">Detalles del Producto</h3>
+                <button class="zoom-close-btn" onclick="cerrarZoom()">&times;</button>
+            </div>
+            <div class="zoom-body-grid">
+                <div class="zoom-img-container">
+                    <img id="zoomImg" src="" alt="Imagen Producto">
+                </div>
+                <div class="zoom-details-box">
+                    <p><strong>Nombre:</strong> <span id="zoomNombre"></span></p>
+                    <p><strong>Código:</strong> <span id="zoomId"></span></p>
+                    <p><strong>Categoría:</strong> <span id="zoomCat" style="text-transform: uppercase;"></span></p>
+                    <p><strong>Descripción:</strong> <span id="zoomDesc"></span></p>
+                    <p><strong>Estado:</strong> <span id="zoomStock"></span></p>
+                    <div class="zoom-price-tag">$<span id="zoomPrecio"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de Administrador Privado -->
+    <div id="adminModal" class="admin-modal-overlay">
+        <div class="admin-box">
+            <h3><i class="fa-solid fa-lock"></i> Panel de Administración Festiva</h3>
+            <div id="adminLoginView">
+                <label>Contraseña de Administrador:</label>
+                <input type="password" id="adminPassInput" placeholder="Ingresa tu contraseña">
+                <div class="admin-btn-group">
+                    <button class="admin-btn-save" onclick="verificarPasswordAdmin()">Ingresar</button>
+                    <button class="admin-btn-close" onclick="cerrarAdminModal()">Cancelar</button>
+                </div>
+            </div>
+            <div id="adminControlView" style="display: none;">
+                <label>Selecciona la Festividad Activa:</label>
+                <select id="selectFestividad">
+                    <option value="ninguno">Normal (Sin festividad)</option>
+                    <option value="findeanio">Fin de Año / Año Nuevo 2027</option>
+                    <option value="carnaval">Carnaval</option>
+                    <option value="sanvalentin">14 de Febrero - Día del Amor y la Amistad</option>
+                    <option value="viernessanto">Viernes Santo</option>
+                    <option value="diadeltrabajador">Día del Trabajador (Todas las profesiones)</option>
+                    <option value="pichincha">Batalla de Pichincha (Escudo y Bandera)</option>
+                    <option value="primergrito">10 de Agosto - Primer Grito de Independencia</option>
+                    <option value="guayaquil">Independencia de Guayaquil</option>
+                    <option value="difuntos">2 de Noviembre - Día de los Difuntos</option>
+                    <option value="cuenca">Festejo de Cuenca (Cholas Cuencanas)</option>
+                    <option value="navidad">Navidad</option>
+                    <option value="blackfriday">Black Friday</option>
+                </select>
+                <div class="admin-btn-group">
+                    <button class="admin-btn-save" onclick="guardarFestividad()">Aplicar Diseño</button>
+                    <button class="admin-btn-close" onclick="cerrarAdminModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con Acceso Secreto de Administrador en las iniciales (FP) -->
+    <footer id="footerSite" class="footer-site">
+        <p><strong>They & Them Bazar Novedades</strong> &copy; 2026. Todos los derechos reservados.</p>
+        <p>Catálogo de belleza, perfumes, cosméticos y más. <span class="admin-trigger" onclick="abrirAdminModal()" title="Panel Admin">(FP)</span></p>
+    </footer>
+
+    <!-- SCRIPT DE PROGRAMACIÓN -->
+    <script>
+        // LISTA DE PRODUCTOS
+        const productos = [
+            { id: "PRO-001", category: "protector solar", name: "Total Block Protector Solar Kids SPF 100 140g", price: 17.99, img: "img/0013520.jpg", desc: "Total Block Kids renovó su fórmula de SPF 70 a SPF 100 para brindar mayor protección para la delicada piel de los niños. Además, ahora protege contra el 100% de los rayos dañinos del sol con una fórmula no lágrimas.", disponible: true },
+            { id: "PER-H-001", category: "perfumes hombre", name: "DENDUR 75ML yanbal H", price: 27.99, img: "img/0013697.jpg", desc: "Un perfume para hombre ambarado especiado que te acompañará a recorrer kilómetros. Un perfume con notas especiadas de pimienta negra y jengibre, sobre toques ahumados de hojas de tabaco.", disponible: true },
+            { id: "PER-H-002", category: "perfumes hombre", name: "OSADIA LIMITED EDITION 75ML yanbal", price: 27.99, img: "img/0014191.jpg", desc: "Fragancia masculina intensa y sofisticada creada para hombres seguros, modernos y con actitud audaz. Su aroma combina notas frescas, especiadas y amaderadas que transmiten fuerza y elegancia.", disponible: true },
+            { id: "PER-H-003", category: "perfumes hombre", name: "ZENTRO 75ML yanbal H", price: 29.99, img: "img/0012788.jpg", desc: "Perfume para hombre ambarado maderoso. Un aroma innovador y cautivador con notas cítricas de yuzu, cedro y el toque provocativo de haba tonka.", disponible: true },
+            { id: "PER-H-004", category: "perfumes hombre", name: "L´ATTRACTION 100ML L´BEL", price: 24.99, img: "img/3503.jpg", desc: "Fragancia masculina herbal aromática creada para el hombre elegante, seguro de sí mismo y con una presencia que atrae todas las miradas. Su fórmula de alta concentración ofrece gran duración.", disponible: true },
+            { id: "PER-H-005", category: "perfumes hombre", name: "KALOS SPORT 100ML ESIKA", price: 18.99, img: "img/3502.jpg", desc: "Fragancia de la familia olfativa Aromática para Hombres. Notas de salida: bergamota, limón y grosellas negras; notas de corazón: azucena y clavel; fondo: cedro y haba tonka.", disponible: true },
+            { id: "PER-H-006", category: "perfumes hombre", name: "ALL BLACK 90ML CYZONE", price: 14.99, img: "img/3707.jpg", desc: "Fragancia masculina de 90 ml perteneciente a la familia oriental especiada, caracterizada por un aroma intenso, cálido y seductor ideal para uso diario o nocturno.", disponible: true },
+            { id: "PER-H-007", category: "perfumes hombre", name: "D´ORSAY GRAND 90ML ESIKA", price: 19.99, img: "img/3969.jpg", desc: "Fragancia masculina de familia oriental maderosa, diseñada con tecnología Essent Tech para maximizar su fijación y larga duración. Destaca por un carácter elegante e intenso.", agotado: true },
+            { id: "PER-H-008", category: "perfumes hombre", name: "BLUE NIGHT 100ML LBEL", price: 24.99, img: "img/3459.jpg", desc: "Fragancia masculina de alta concentración y familia olfativa herbal maderosa / fresca. Destaca por combinar notas acuáticas y de salvia con un fondo cálido de haba tonka.", disponible: true },
+            { id: "PER-H-009", category: "perfumes hombre", name: "FORZE 50ML CYZONE", price: 14.99, img: "img/3967.jpg", desc: "Fragancia masculina de la familia olfativa herbal maderosa/acuática. Destaca por combinar frescura marina con un fondo cálido y versátil.", disponible: true },
+            { id: "PER-H-010", category: "perfumes hombre", name: "BLUE INFINITE LBRL 100ML", price: 24.99, img: "img/3966.jpg", desc: "Fragancia masculina de 100 ml con un aroma herbal y fresco, de muy alta concentración. Creado para hombres libres e independientes.", disponible: true },
+            { id: "PER-H-011", category: "perfumes hombre", name: "NITRO AIR, 100 ML yanbal", price: 15.99, img: "img/4007.jpg", desc: "Un perfume herbal aromático para hombre muy popular y económico. Destaca por sus notas frescas de lavanda, pimienta blanca y maderas de sándalo o guayacán.", disponible: true },
+            { id: "PER-M-001", category: "perfumes mujer", name: "DULCE AMISTAD 50ML yanbal M", price: 23.99, img: "img/0013203.jpg", desc: "Fragancia femenina de 50 ml. Su aroma combina notas frutales y florales con un fondo dulce de frambuesa, flor de cerezo y helado de vainilla.", disponible: true },
+            { id: "PER-M-002", category: "perfumes mujer", name: "CIELO 50ML yanbal", price: 27.99, img: "img/0013641.jpg", desc: "El Cielo de Yanbal (50 ml) es un emblemático Eau de Parfum para mujer con un aroma floral ambarado. Combina notas de jazmín, flor de loto fresca y musk.", disponible: true },
+            { id: "PER-M-003", category: "perfumes mujer", name: "OSADIA ROJO 50ML yanbal", price: 27.99, img: "img/0013197.jpg", desc: "Fragancia femenina de alta intensidad con un aroma floral frutal. Destaca por notas de granada, flor de maracuyá y jengibre, inspirada en la energía de la mujer latina.", AGOTADO: true },
+            { id: "PER-M-004", category: "perfumes mujer", name: "OSADIA LIMITED EDITION 50ML yanbal", price: 27.99, img: "img/0014190.jpg", desc: "Fragancia de alta intensidad disponible para mujer (frutal floral de 50 ml con granada, flor de maracuyá y jengibre), pensada para personalidades audaces.", disponible: true },
+            { id: "PER-M-005", category: "perfumes mujer", name: "CCORI RUBI 50ML yanbal", price: 28.99, img: "img/0014215.jpg", desc: "Perfume femenino de la familia olfativa ámbar floral, caracterizado por su aroma intenso, sofisticado y altamente sensual.", disponible: true },
+            { id: "PER-M-006", category: "perfumes mujer", name: "REVE SENSUELLE 50ML L´BEL", price: 24.99, img: "img/3983.jpg", desc: "Rêve Sensuelle es un perfume para mujer de la familia olfativa oriental dulce amaderada. Destaca por su alta concentración aromática y gran fijación.", disponible: true },
+            { id: "PER-M-007", category: "perfumes mujer", name: "HYPNOTISANT 50ML L´BEL", price: 19.99, img: "img/3984.jpg", desc: "Perfume femenino de alta concentración que pertenece a la familia olfativa floral frutal. Su propuesta gira en torno a un concepto misterioso y elegante.", disponible: true },
+            { id: "PER-M-008", category: "perfumes mujer", name: "TEMPTATION 50ML yanbal", price: 28.99, img: "img/0012907.jpg", desc: "Un perfume de mujer floral especiado que combina la exuberancia de la rosa búlgara, gardenia y clavo de olor. ¡Un verdadero elixir de pura tentación!", disponible: true },
+            { id: "PER-M-009", category: "perfumes mujer", name: "DANCING NIGHT 90ML CYZONE", price: 13.99, img: "img/3509.jpg", desc: "Fragancia femenina de la familia olfativa oriental dulce, diseñada especialmente para destacar en salidas nocturnas, fiestas o eventos especiales.", disponible: true },
+            { id: "PER-M-010", category: "perfumes mujer", name: "VIBRANZA LUMINOUS 45ML ESIKA", price: 21.99, img: "img/3513.jpg", desc: "Perfume femenino de alta concentración que pertenece a la familia olfativa floral oriental, diseñado para la mujer sofisticada, fuerte y sensual.", disponible: true },
+            { id: "PER-M-011", category: "perfumes mujer", name: "IMARI FREE 50ML AVON", price: 11.99, img: "img/7909189357413.jpg", desc: "Fragancia de la familia olfativa Amaderada Aromática / Floral Chipre para mujeres. Inspirada en la frescura y la fuerza del océano.", disponible: true },
+            { id: "PER-M-012", category: "perfumes mujer", name: "MISS 50ML L´BEL", price: 19.99, img: "img/3211.jpg", desc: "Fragancia femenina de muy alta concentración y larga duración perteneciente a la familia olfativa Floral Frutal.", disponible: true },
+            { id: "PER-M-013", category: "perfumes mujer", name: "VAINILLA SCENT 50ML ESIKA", price: 13.99, img: "img/3986.jpg", desc: "Fragancia con notas de vainilla que combinan calidez, sofisticación y misterio, fusionándose con resinas, especias, flores y maderas.", disponible: true },
+            { id: "MAQ-001", category: "maquillaje", name: "AVON COLOR TREND DELINEADOR LÍQUIDO NEGRO MATE", price: 2.99, img: "img/7909189200733.jpg", desc: "Viene en presentación de 3 ml con pincel de punta fina que permite trazos precisos, desde líneas delgadas hasta un cat-eye grueso.", disponible: true },
+            { id: "MAQ-002", category: "maquillaje", name: "MÁSCARA MAGNETIC LASH STUDIO LOOK CYZONE 8G", price: 5.99, img: "img/3213.jpg", desc: "Tecnología Smart Magnet con esferas que brinda 7 veces más largo, 6 veces más volumen y 5 veces más rizadas con Vitamina B5 y aceite de argán.", disponible: true },
+            { id: "MAQ-003", category: "maquillaje", name: "DELINEADOR LÍQUIDO EYE PRO PUNTA PLUMÓN 3ML ÉSIKA", price: 2.99, img: "img/4001.jpg", desc: "Ofrece hasta 36 horas de duración sin correrse ni perder intensidad, es una fórmula a prueba de agua de alta pigmentación.", disponible: true },
+            { id: "MAQ-004", category: "maquillaje", name: "MASCARA PESTAÑAS COLORFIX POWER LASH 30H ÉSIKA", price: 6.99, img: "img/4002.jpg", desc: "La máscara de pestañas multibeneficios para más largo y volumen, a prueba de agua. Capacidad: 8 g.", disponible: true },
+            { id: "MAQ-005", category: "maquillaje", name: "MEGA FULL VOLUME 4D MÁSCARA DE PESTAÑAS", price: 5.99, img: "img/3716.jpg", desc: "Mega Full Volume 4D de Ésika es una máscara a prueba de agua diseñada para aportar volumen extremo y definición de impacto sin dejar grumos.", disponible: true },
+            { id: "MAQ-006", category: "maquillaje", name: "DELINEADOR LÍQUIDO AVON POWER STAY BLACKEST BLACK", price: 5.99, img: "img/7909189217359.jpg", desc: "Cuenta con una punta ultrafina de alta precisión ideal para trazos finos o gruesos. Ofrece un acabado ultra mate e intenso de larga duración.", disponible: true },
+            { id: "MAQ-007", category: "maquillaje", name: "MÁSCARA DE PESTAÑAS ULTRA CURL LASH STUDIO LOOK", price: 6.49, img: "img/4004.jpg", desc: "Máscara de pestañas con 8x más rizo al instante y duración 24 horas. Medidas aproximadas: Alto 136mm; Ancho: 20mm.", disponible: true },
+            { id: "MAQ-008", category: "maquillaje", name: "BÁLSAMO CON COLOR HIDRABALM PRO ROSA SMOOTHIE ÉSIKA", price: 3.99, img: "img/3722.jpg", desc: "Rosa Smoothie: rosa nude suave y sutil con acabado de alto brillo natural. Al ser bálsamo, su pigmentación es ligera y graduable.", disponible: true },
+            { id: "MAQ-009", category: "maquillaje", name: "MÁSCARA MEGA FULL SIZE EXTENDER PRIMER 8G", price: 6.99, img: "img/4005.jpg", desc: "Destaca tu mirada con esta máscara Ésika que define y cuida tu pestaña. Se verán naturalmente suaves y peinadas en todo momento.", disponible: true },
+            { id: "NIN-001", category: "niños", name: "DESENREDANTE DE CABELLO MINI CHICS 200 ML ÉSIKA", price: 6.99, img: "img/4006.jpg", desc: "Desenredante con vitaminas y un delicioso aroma a frescas notas florales para el cuidado diario del cabello de los niños.", disponible: true },
+            { id: "HOG-001", category: "hogar", name: "WIPWIP ARRANCA GRASA 600ML BOOM", price: 4.62, img: "img/7861111430161.jpg", desc: "Dile adiós a la suciedad más difícil en segundos. Su poderosa fórmula actúa rápido, desintegrando la grasa sin dañar las superficies.", disponible: true },
+            { id: "HOG-002", category: "hogar", name: "WIP WIP LIM ANTIBACTERIAL 600ML BOOM", price: 4.25, img: "img/7861111431311.jpg", desc: "Diseñado específicamente para limpiar, remover manchas y desinfectar el interior de electrodomésticos sin dejar residuos dañinos.", disponible: true },
+            { id: "HOG-003", category: "hogar", name: "WIPWIP ULTRASARRO 600ML BOOM", price: 3.59, img: "img/7861111430246.jpg", desc: "Conserva limpio y libre de hongos los espacios de tu baño gracias al poder removedor y desinfectante que elimina sarro y jabón.", disponible: true },
+            { id: "HOG-004", category: "hogar", name: "WIPWIP CLORO GEL 1000ML BOOM", price: 3.70, img: "img/7861111430277.jpg", desc: "Mantiene el control de la limpieza con su textura gel que se adhiere con facilidad actuando como desinfectante y blanqueador.", disponible: true },
+            { id: "HOG-005", category: "hogar", name: "WIPWIP CLORO SIN AROMA 1000ML BOOM", price: 2.16, img: "img/7861111430222.jpg", desc: "Presentación de 1 litro que conserva limpio y libre de gérmenes los espacios del hogar gracias a su poder blanqueador que actúa al instante.", disponible: true },
+            { id: "HOG-006", category: "hogar", name: "WIP DESOXIDANTE DE SUPERFICIES 600ML BOOM", price: 4.25, img: "img/7861111431168.jpg", desc: "Producto líquido ideal para la limpieza del óxido generado en superficies metálicas, dejando una capa que previene el desgaste.", disponible: true },
+            { id: "HOG-007", category: "hogar", name: "TESQUI QUITA MANCHAS 900ML BOOM", price: 4.62, img: "img/7861111430499.jpg", desc: "Resuelve las manchas difíciles de tu ropa con sus múltiples funciones quitamanchas eficaces sobre diferentes tejidos.", disponible: true },
+            { id: "HOG-008", category: "hogar", name: "WIP LIMPIA MUEBLES BOOM", price: 4.60, img: "img/7861111430512.jpg", desc: "Limpia Muebles elimina polvo y opacidad, devolviendo el brillo y una apariencia renovada a tus superficies de madera y melanina.", disponible: true },
+            { id: "MAQ-010", category: "maquillaje", name: "ESSENTIAL AGUA MICELAR EFECTO ANTIEDAD 180ML L´BEL", price: 10.99, img: "img/4008.jpg", desc: "Agua Micelar con Ácido Hialurónico para todo tipo de piel, incluso pieles sensibles, con alto poder desmaquillante e hidratante.", disponible: true },
+            { id: "MAQ-011", category: "maquillaje", name: "AGUA MICELAR EFECTO MATIFICANTE ESSENTIAL 180 ML L´BEL", price: 10.99, img: "img/4009.jpg", desc: "Diseñada para pieles mixtas a grasas, limpia impurezas, desmaquilla y controla la oleosidad en el rostro.", disponible: true },
+            { id: "MAQ-012", category: "maquillaje", name: "ESSENTIAL DESMAQUILLADOR BIFÁSICO 125ML L´BEL", price: 8.99, img: "img/3201.jpg", desc: "Loción desmaquillante bifásica con efecto détox que remueve maquillaje a prueba de agua sin irritar los ojos.", disponible: true },
+            { id: "MAQ-013", category: "maquillaje", name: "SUERO CAPILAR TRATAMIENTO RECONSTRUCCIÓN AVON 30ML", price: 5.99, img: "img/7909189190508.jpg", desc: "Suero capilar profesional Advance Techniques para reparar intensamente el cabello seco, químicamente tratado o dañado.", disponible: true },
+            { id: "MAQ-014", category: "maquillaje", name: "SÉRUM TRATAMIENTO RIZOS FABULOSOS 30 ML AVON", price: 5.99, img: "img/7909189247431.jpg", desc: "Colección enriquecida con aceite de ricino y complejos de proteínas que aporta fuerza, brillo y elasticidad al cabello rizado.", disponible: true },
+            { id: "PER-M-014", category: "perfumes mujer", name: "MITHYKA 50ML L´BEL", price: 19.99, img: "img/4012.jpg", desc: "Perfume floral con opulentas notas de jazmín de Sambac y un seductor bouquet de flores blancas con estela de alta duración.", disponible: true },
+            { id: "PRO-002", category: "protector solar", name: "AVON CARE SUN+ 60FPS 120G", price: 11.99, img: "img/7909189325733.jpg", desc: "Ofrece protección UVA/UVB con tecnología Derma 360°, protegiendo contra el sol, cloro y agua salada mientras mantiene la piel hidratada.", disponible: true },
+            { id: "PRO-003", category: "protector solar", name: "PROTECTOR SOLAR DÉFENSE TOTAL FPS50 80ML L´BEL", price: 13.99, img: "img/3534.jpg", desc: "Bloqueador multibeneficio formulado para rostro y cuerpo que ofrece alta protección contra radiación solar y envejecimiento prematuro.", disponible: true },
+            { id: "PRO-004", category: "protector solar", name: "SKIN FIRST FPS50 50ML CYZONE", price: 9.99, img: "img/3533.jpg", desc: "Bloqueador diario de efecto mate sin brillo para el rostro. Ideal para pieles mixtas, grasas o propensas a imperfecciones.", disponible: true },
+            { id: "PRO-005", category: "protector solar", name: "TOTAL BLOCK SPF100 50G YANBAL", price: 11.99, img: "img/0014651.jpg", desc: "Protección dermatológica extrema contra radiación UV. Tamaño compacto de 50g perfecto para llevar en el bolso o de viaje.", disponible: true },
+            { id: "PRO-006", category: "protector solar", name: "AVON CARE SUN+ ROSTRO FPS50 CONTROL BRILLO 50G", price: 8.99, img: "img/7909189137961.jpg", desc: "Protector facial mate para pieles mixtas a grasas, ofrece alta barrera solar sin obstruir poros ni generar residuos pesados.", disponible: true },
+            { id: "PIEL-001", category: "cuida tu piel", name: "LOCIÓN CORPORAL MULTICREM NUTRIENTS ESIKA 1L", price: 11.99, img: "img/3993.jpg", desc: "Crema de 1 litro para piel seca a extra seca con avena, germen de trigo y miel, brindando 72 horas de humectación sin sensación grasosa.", disponible: true },
+            { id: "PIEL-002", category: "cuida tu piel", name: "CREMA GRANADA & CANELA NATURAL CARE 1L ESIKA", price: 10.99, img: "img/3994.jpg", desc: "Hidratación prolongada por 48 horas con aroma frutal y especiado a granada y canela, ideal para la resequedad diaria.", disponible: true },
+            { id: "PIEL-003", category: "cuida tu piel", name: "CREMA AVON GLICERINA Y ACEITE ALMENDRAS 1L", price: 8.99, img: "img/7909189339112.jpg", desc: "Fórmula 6 en 1 con glicerina y aceite de almendras para nutrición profunda y mejora visible en la textura de la piel.", disponible: true },
+            { id: "PIEL-004", category: "cuida tu piel", name: "CREMA CORPORAL AVON CARE ACEITE DE COCO 1L", price: 8.99, img: "img/7909189367344.jpg", desc: "Tratamiento con aceite de coco que alivia la tirantez y restaura la humedad natural del cuerpo por 48 horas.", disponible: true },
+            { id: "PIEL-005", category: "cuida tu piel", name: "CREMA CORPORAL AVON CARE MILK 6 EN 1 1L", price: 7.99, img: "img/7909189351381.jpg", desc: "Loción familiar enriquecida con Vitamina E que protege la barrera cutánea manteniendo la piel suave todo el día.", disponible: true },
+            { id: "PIEL-006", category: "cuida tu piel", name: "BIOMILK SENSITIVE 750ML YANBAL", price: 11.99, img: "img/0014186.jpg", desc: "Especializada para pieles sensibles y extrasecas. Sin fragancia, hipoalergénica con hasta 48 horas de hidratación continua.", disponible: true },
+            { id: "PIEL-007", category: "cuida tu piel", name: "BIOMILK INTENSIVE 750ML YANBAL", price: 11.99, img: "img/0013390.jpg", desc: "Crema corporal con proteínas de leche para hidratación avanzada y suavidad en pieles normales a secas.", disponible: true },
+            { id: "PIEL-008", category: "cuida tu piel", name: "EKOS CASTANHA NATURA 400ML", price: 12.99, img: "img/7909883353483.jpg", desc: "Polpa corporal antiseñales con óleo de castaña del Amazonas que combate la descamación e hidrata profundamente.", disponible: true },
+            { id: "PIEL-009", category: "cuida tu piel", name: "TODODIA FRUTAS ROJAS 400ML NATURA", price: 12.99, img: "img/7908132274944.jpg", desc: "Crema prebiótica con fragancia dulce y alegre que se adapta a las necesidades de tu piel dejándola más firme.", disponible: true },
+            { id: "PIEL-010", category: "cuida tu piel", name: "EKOS TUKUMÁ 400ML NATURA", price: 12.99, img: "img/7908240850481.jpg", desc: "Estimula la producción natural de ácido hialurónico en el cuerpo rellenando capas profundas de la piel.", disponible: true },
+            { id: "PIEL-011", category: "cuida tu piel", name: "CREMA ROSA MOSQUETA Y CAMELIA 100G AVON", price: 4.99, img: "img/7909189382330.jpg", desc: "Crema multiacción 6 en 1 para el rostro: nutre, revitaliza, humecta, suaviza y reduce pequeñas marcas de expresión.", disponible: true },
+            { id: "PIEL-012", category: "cuida tu piel", name: "CREMA CORPORAL AVON AGUACATE 6 EN 1 1L", price: 8.99, img: "img/7909189339068.jpg", desc: "Humectación intensiva con aceite de aguacate y Vitamina E, ideal para zonas resecas como codos, rodillas y talones.", disponible: true },
+            { id: "NIN-002", category: "niños", name: "COLONIA MINI CHICS 120ML ÉSIKA", price: 6.99, img: "img/39901.jpg", desc: "Colonia infantil de 120 ml con sutiles destellos brillantes (glitter) y un fresco aroma dulce para niñas.", disponible: true },
+            { id: "NIN-003", category: "niños", name: "COLONIA COMANDO FORCE XPLASH 120ML ÉSIKA", price: 6.99, img: "img/3991.jpg", desc: "Colonia para niños aventureros con fragancia refrescante y alegre ideal para el uso diario después del baño.", disponible: true },
+            { id: "NIN-004", category: "niños", name: "COLONIA COMANDO FORCE AROMAX 120ML ÉSIKA", price: 6.99, img: "img/3992.jpg", desc: "Fragancia masculina infantil con notas enérgicas diseñada para pequeños superhéroes a partir de los 5 años.", disponible: true },
+            { id: "PER-H-012", category: "perfumes hombre", name: "OHM YANBAL", price: 29.99, img: "img/3192.jpg", desc: "Un perfume para hombre herbal cítrico que mezcla notas deliciosas de toronja rosada, salvia y toques especiales de cuero. Un aroma único que te invita a disfrutar la esencia y frescura de la vida.", disponible: true },
+            { id: "MAQ-015", category: "maquillaje", name: "MASCARA DE PESTAÑAS MEGA FULL SIZE ESIKA (A PRUEBA DE AGUA)", price: 5.99, img: "img/3212.jpg", desc: "Mega Full Size es la máscara de pestañas (rímel) número uno de Ésika, ampliamente reconocida en el mercado por su capacidad para ofrecer un largo insuperable de hasta 10 veces y un efecto de alta definición sin dejar grumos, a prueba de agua que aporta tamaño XXL a las pestañas con una fórmula que resiste el roce, la humedad, el sudor y hasta las lágrimas sin correrse ni mancharse.", disponible: true },
+            { id: "PER-M-015", category: "perfumes mujer", name: "LIASSON", price: 19.99, img: "img/3191.jpg", desc: "Perfume femenino de la familia olfativa floral amaderada, reconocido por su estilo clásico, elegante y sofisticada concentración máxima. Es una fragancia diseñada para destacar la elegancia natural de la mujer, ofreciendo una excelente fijación y larga duración en la piel.", disponible: true },
+            { id: "PRO-007", category: "protector solar", name: "PROTECTOR SOLAR JUMBO TOTAL BLOCK 140G", price: 18.99, img: "img/0013517.jpg", desc: "Es un protector solar de amplio espectro diseñado para brindar una protección contra el 100% de los rayos dañinos del sol. Altamente resistente al agua y al sudor, ideal para el uso diario o actividades al aire libre, Ultra Block Technology que protege contra los rayos UVB (SPF 100), UVA (PA++++), Luz Azul e Infrarrojos.", disponible: true },
+            { id: "PER-M-016", category: "perfumes mujer", name: "DREAM 45ML ESIKA", price: 17.99, img: "img/3711.jpg", desc: "Fragancia femenina de la familia floral frutal, diseñada para la mujer audaz, vibrante y llena de energía. Destaca por su alta concentración y larga duración gracias al proceso tecnológico Essent Tech de la marca.", disponible: true },
+            { id: "TEC-001", category: "tecnología", name: "MOUSE HP 150 INALAMBRICO", price: 10.99, img: "img/195161814662.jpg", desc: "Disfruta de una nueva libertad digital con el ratón inalámbrico HP 150. Olvídate de los cables que limitan tu movimiento y desordenan tu espacio. Su diseño ergonómico y suave se adapta perfectamente a tu mano, haciéndote olvidar que lo tienes, para que puedas concentrarte solo en tu productividad. Llévalo contigo a cualquier parte, desde la oficina hasta tu próximo viaje, y mantén el control total de tu portátil con fluidez y precisión. Es la herramienta perfecta para trabajar de forma cómoda y eficiente durante horas, sin importar si eres diestro o zurdo.", disponible: true },
+            { id: "TEC-002", category: "tecnología", name: "Smart Watch Infinix Xw4l Black Bluetooth 5.3", price: 28.99, img: "img/3978.jpg", desc: "Reloj inteligente de alto rendimiento con conectividad avanzada. Pantalla IPS de 2.04': Visualización amplia y clara de métricas y notificaciones. Bluetooth 5.3: Conexión inalámbrica estable, rápida y de bajo consumo. Resistencia IP68: Protección contra polvo y sumergible en agua dulce. Más de 100 Modos Deportivos: Monitoreo completo para todo tipo de entrenamiento.", disponible: true },
+            { id: "TEC-003", category: "tecnología", name: "UPS HIKVISION AVR 600 VA / 360 W 6 SALIDAS (120V) (50/60HZ) - DS-UPS600-X", price: 32.99, img: "img/304901285.jpg", desc: "Sistemas de alimentación ininterrumpida (UPS/No-Break) de línea interactiva con capacidad de 600 VA / 360 W. Capacidad de potencia: 600 VA / 360 W. Distribución: 6 tomas tipo NEMA 5-15R en total. 4 tomas con respaldo de batería y regulación automática de voltaje (AVR). 2 tomas sin respaldo con función bypass y protección contra picos. Regulación de voltaje: entrada de 85 a 150 VCA y salida estable de 102 a 132 VCA. Ideal para routers, computadoras de escritorio y videovigilancia.", disponible: true },
+            { id: "MAQ-16", category: "maquillaje", name: "POLVO COMPACTO FACIAL EFECTO MATE OSCURO FPS10 COLOR TREND AVON", price: 3.99, img: "img/7909189274543.jpg", desc: "Acabado limpio y refrescante que rejuvenece el aspecto general de forma natural. Textura ultrafina y ligera con acabado natural sin brillo. Para todo tipo de piel. No la irrita y no obstruye los poros. Fórmula con bajo contenido de grasa y lanolina que protege y suaviza tu piel.", disponible: true },
+            { id: "MAQ-17", category: "maquillaje", name: "POLVO COMPACTO EFECTO MATE FPS 10 TONO CLARO | COLOR TREND AVON , 7G", price: 3.99, img: "img/7909189274529.jpg", desc: "Acabado limpio y refrescante que rejuvenece el aspecto general de forma natural. Textura ultrafina y ligera con acabado natural sin brillo. Para todo tipo de piel. No la irrita y no obstruye los poros. Fórmula con bajo contenido de grasa y lanolina que protege y suaviza tu piel.", disponible: true },
+            { id: "RL-1", category: "roll_on", name: "OHM 50G YANBAL", price: 3.50, img: "img/0011230.jpg", desc: "Un desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-3", category: "roll_on", name: "OHM BLACK YANBAL 50G", price: 3.50, img: "img/0013319.jpg", desc: "Desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. ¡Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-4", category: "roll_on", name: "OHM NOW 50G YANBAL", price: 3.50, img: "img/0014234.jpg", desc: "Desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. ¡Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-5", category: "roll_on", name: "SOLO YANBAL 50G", price: 3.50, img: "img/0011976.jpg", desc: "Protección con el aroma de tu fragancia favorita 50 gr . Un desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad.", disponible: true },
+            { id: "RL-5", category: "roll_on", name: "SOLO ELIXIR 50G YANBAL", price: 3.50, img: "img/0014039.jpg", desc: "Un desodorante roll on antitranspirante de secado rápido con el aroma del perfume Solo Elixir. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. Tiene hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-6", category: "roll_on", name: "GAIA YAMBAL 50G", price: 3.50, img: "img/0013314.jpg", desc: "Desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. ¡Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-7", category: "roll_on", name: "EFFECTIVE ACLARANTE  50G YANBAL", price: 3.99, img: "img/0011666.jpg", desc: "Un desodorante roll on aclarante, hipoalergénico y clínicamente probado, que te protege contra el mal olor en las axilas y la transpiración, mientras ayuda a restaurar el tono natural de tu piel. No irrita tus axilas y puedes usarlo inmediatamente después de depilarte. El desodorante Effective aclarante roll on, brinda protección hasta por 48 horas contra el sudor* y el mal olor**. Su acción aclarante con Extracto de flor de Margarita ayuda a recuperar el tono natural de la piel.", disponible: true },
+            { id: "RL-8", category: "roll_on", name: "CIELO 50G YAM", price: 3.50, img: "img/0013580.jpg", desc: "Un desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-9", category: "roll_on", name: "EFFECTIVE CLINICAL 50G  YANBAL", price: 3.50, img: "img/0012194.jpg", desc: "Un desodorante especializado para casos de sudoración extrema, ya que neutraliza hasta por 72 horas los malos olores y deja tu piel fresca. Además, no contiene alcohol y no deja manchas amarillas en la ropa. Captura y neutraliza los malos olores haciéndolos imperceptibles. Su agente antitranspirante evita la transpiración y disminuye la producción de sudor. Absorbe la humedad con polvo de bambú que potencia la acción antitranspirante de la fórmula. El mejor cuidado!", disponible: true },
+            { id: "RL-10", category: "roll_on", name: "OSADIA 50G YANBAL", price: 3.50, img: "img/0013323.jpg", desc: "Un desodorante roll on antitranspirante con el aroma de tu fragancia favorita. Su fórmula controla la transpiración y el mal olor, para una piel fresca y libre de humedad. Hasta 48 horas de protección contra la transpiración* y el mal olor**! Mantiene tu piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Su fórmula suave con 0% de alcohol, respeta la piel sensible de las axilas. Además, seca rápido y es súper práctico para aplicar sobre la piel.", disponible: true },
+            { id: "RL-11", category: "roll_on", name: "EFFECTIVE BRISA FLORAL 50G YANBAL", price: 3.99, img: "img/0011842.jpg", desc: "Un desodorante para mujer con hasta 48 horas de protección contra la transpiración y el mal olor: mantiene la piel fresca y libre de humedad, contribuyendo a una sensación de limpieza durante todo el día. Además, es hipoalergénico, 0% alcohol y no irrita la piel. Controla la transpiración y el mal olor, para una piel fresca y libre de humedad! Gracias a sus agentes antitranspirantes y desodorantes, este roll on, de fácil aplicación que no mancha la ropa, es una excelente alternativa de uso diario que te protege sin causarte irritación. Además, su delicado aroma floral es perfecto para refrescarte y olvidarte del mal olor en las axilas.", disponible: true },
+            { id: "RL-12", category: "roll_on", name: "PULSO ABSOLUTE ÉSIKA", price: 2.99, img: "img/3470.jpg", desc: "Antitranspirante masculino diseñado para ofrecer protección diaria combinando el cuidado de la piel con una fragancia fina.  Esencia masculina de la familia oriental especiada, que incluye notas cálidas y vibrantes de cardamomo, tabaco y anís estrella. Complementa perfectamente al perfume de la misma línea.", disponible: true },
+            { id: "RL-13", category: "roll_on", name: "NITRO AIR 50G CYZONE", price: 2.99, img: "img/3480.jpg", desc: "Nueva presentación con la protección y aroma de siempre. Libre y seguro. El desodorante para hombre Nitro Air Roll-On Antitranspirante, cuenta con el aroma del Perfume Nitro Air . Fresco y masculino. El PH de los hombres es diferente al de las mujeres, por eso ellos necesitan un desodorante con una fórmula especial. rotégete contra el mal olor y sudor en las axilas, dándole una sensación de limpieza durante el día. Su delicioso y masculino aroma herbal es una mezcla de pimienta blanca, toques de sándalo, madera guaiac y acordes de lavanda. Úsalo y no dejes que las situaciones incómodas te detengan.", disponible: true },
+            { id: "RL-14", category: "roll_on", name: "DESODORANTE MUJER SWEET BLACK  50ML ÉSIKA", price: 2.99, img: "img/4026.jpg", desc: "Destaca por complementar la fragancia del perfume homónimo, ofreciendo protección contra el sudor y el mal olor durante todo el día con notas dulces de pink pomelo y sándalo. Incorpora toques jugosos de pink pomelo, sándalo y notas cálidas, brindando una experiencia fresca y femenina.", disponible: true },
+            { id: "RL-15", category: "roll_on", name: "DESODORANTE MUJER DANCING NIGHT 50ML CYZONE", price: 2.99, img: "img/4027.jpg", desc: "Destaca por su aroma oriental dulce, el cual complementa perfectamente al perfume de su misma línea con sus características notas de ciruela, jazmín y vainilla. Ideal para mantener la piel protegida del mal olor y la sudoración, dejando una estela aromática sensual y juvenil.", disponible: true },
+            { id: "RL-16", category: "roll_on", name: "DESODORANTE MUJER GIRLINK 50ML CYZONE", price: 2.99, img: "img/3476.jpg", desc: "El Desodorante para Mujer Girlink Roll-On Antitranspirante, cuenta con el aroma del Perfume Girlink, para que nada te detenga. Su fórmula sin alcohol te ayuda a combatir la transpiración y te brinda protección y frescura todo el día. Además, te protege de la sudoración y mal olor con un aroma a fragancia fina ésika", disponible: true },
+            { id: "RL-17", category: "roll_on", name: "DESODORANTE MUJER VAINILLA SCENT 50ML ÉSIKA", price: 2.99, img: "img/3471.jpg", desc: "Es un producto de cuidado personal femenino que brinda protección antitranspirante mientras complementa el aroma de la icónica fragancia del mismo nombre. Ofrece un aroma oriental dulce y delicado, con notas predominantes de vainilla y jazmín.", disponible: true },
+            { id: "RL-18", category: "roll_on", name: "LEYENDA ABSOLUTR 50ML ÉSIKA", price: 2.99, img: "img/3468.jpg", desc: "Desodorante roll on sin alcohol. Protégete de la transpiración y de los malos olores mientras disfrutas de un delicioso aroma herbal aromático. Textura líquida cremosa. Su fórmula sin alcohol te ayuda a combatir la transpiración y te brinda protección y frescura todo el día. Además, te protege de la sudoración y mal olor con un aroma a fragancia fina ésika.", disponible: true },
+            { id: "RL-19", category: "roll_on", name: "DESODORANTE MUJER CLARITY 50ML CYZONE", price: 2.99, img: "img/3477.jpg", desc: "Está diseñado para ayudar a mantener el tono uniforme de la piel de las axilas y prevenir la aparición de manchas oscuras.  Ofrece una acción antitranspirante y antibacterial efectiva contra el sudor y el mal olor por hasta 24 o 48 horas (según la variante).", disponible: true },
+            { id: "RL-20", category: "roll_on", name: "MUSK MARINE 50 ML AVON", price: 2.50, img: "img/7909189048465.jpg", desc: "Ofrece protección continua contra el sudor y el mal olor, diseñado para mantener las axilas secas con una sensación refrescante de larga duración.  Una alternativa suave de aplicación directa, enfocada en brindar la misma protección y aroma característico de la línea de fragancias náuticas de Avon.", disponible: true },
+            { id: "RL-21", category: "roll_on", name: "AVON CARE 3 EN 1 DESODORANTE NEUTRO SIN PERFUME 48 ML", price: 2.50, img: "img/7909189364435.jpg", desc: "es un producto de cuidado personal diseñado con una fórmula 3 en 1 para pieles sensibles o para quienes prefieren no mezclar aromas con su loción diaria. Ofrece hasta 48 horas de protección efectiva contra la transpiración y el mal olor.", disponible: true },
+            { id: "RL-22", category: "roll_on", name: "300 KM/H QUANTUM 50ML AVON", price: 2.50, img: "img/7909189249336.jpg", desc: "Ofrece protección antitranspirante contra el olor y la humedad hasta por 48 horas. Incorpora las notas de la fragancia original 300 Km/h Quantum, caracterizada por un perfil fougère acuoso con notas ozónicas, geranio y un fondo de madera de cedro de Virginia.", disponible: true },
+            { id: "HOG-41", category: "hogar", name: "SANDUCHERA GRILL 750W JK-150", price: 22.99, img: "img/104250000060.jpg", desc: "La Sanduchera Grill de 750W (Modelo JK-150) es un electrodoméstico compacto y eficiente diseñado por marcas comerciales (como Scotland Star, Forever o Simplicity) para preparar sánduches, paninis y bocadillos calientes de manera rápida. Ofrece una cocción rápida y uniforme con un consumo eléctrico equilibrado.", disponible: true },
+            { id: "TEC-16", category: "tecnología", name: "PROTECTOR DE VOLTAJE RCA", price: 8.99, img: "img/7861223425215.jpg", desc: "Ideal para proteger electrodomésticos como refrigeradoras, lavadoras, microondas o aires acondicionados contra sobrecargas, variaciones de voltaje y fluctuaciones extremas. Cuenta con indicadores LED de estado (Bajo, Alto, Salida y Retraso). Voltaje de trabajo: 120 VAC/ Maximo voltaje 140V/ minimo voltaje 90V.", disponible: true },
+            { id: "TEC-17", category: "tecnología", name: "EXTENSOR REPETIDOR HIKVISION DS-3WRE12C AC1200", price: 18.00, img: "img/4031.jpg", desc: "Es un extensor y repetidor Wi-Fi de doble banda diseñado para eliminar de forma sencilla las zonas muertas de internet en hogares u oficinas de más de 120 metros cuadrados. Es ideal para viviendas de dos plantas o espacios con múltiples habitaciones donde la señal del módem principal llega muy débil. Rendimiento Dual Band Inteligente: Utiliza la banda de 5 GHz para tareas pesadas como transmisión de video en alta definición, streaming o cámaras de seguridad IP sin interrupciones. Al mismo tiempo, mantiene la banda de 2.4 GHz para dar mayor cobertura a distancias largas y atravesar muros gruesos hacia teléfonos o dispositivos inteligentes", disponible: true },
+            { id: "PRO-M-13", category: "promociones", name: "MOCHILA + MINI CHICS ÉSIKA", price: 19.99, img: "img/4032.jpg", desc: "Hermosa mochila en tono rosado con tierno diseño de corazón transparente y detalles dorados. ¡Súper práctica, moderna y cómoda!. Colonia Mini Chics Kelly Tech (120 ml): Una deliciosa colonia con chispantes estrellas brillantes para que huelan rico y brillen todo el día.", disponible: true },
+            { id: "RL-22", category: "roll_on", name: "Desodorante en Aerosol Black Suede Avon, 150ml", price: 5.99, img: "img/7909189213887.jpg", desc: "Spray corporal perfumado que ayuda a proporcionarte protección desodorante todo el día, con notas orientales y de cuero. Siéntete cálido y seguro y libera tu espíritu moderno, enérgico y masculino a través del aroma de este spray", disponible: true },
+            { id: "RL-23", category: "roll_on", name: "Desodorante En Aerosol Musk Avon, 150ml", price: 5.99, img: "img/7909189265527.jpg", desc: "Es un producto de cuidado personal masculino que ofrece una fragancia clásica amaderada almizclada. Está diseñado principalmente para aplicarse en el cuerpo, brindando frescura y protección contra el mal olor", disponible: true },
+            { id: "PER-M-117", category: "perfumes mujer", name: "DESTINÉ VIENNA FRUITY PEACH 200ML L´BEL", price: 9.99, img: "img/4035.jpg", desc: "Colonia para Mujer y Fresco, Familia Olfativa Floral y Acuático, Perfume Femenino y Romántico, con Notas de Durazno, Lychee y Vainilla", disponible: true },
+            { id: "PER-M-118", category: "perfumes mujer", name: "COLONIA BERRY COCKTAIL 200ML CYZONE", price: 7.99, img: "img/4036.jpg", desc: "Fragancia femenina de la familia olfativa frutal que destaca por su aroma dulce, intenso y vibrante.", disponible: true },
+            { id: "PER-M-119", category: "perfumes mujer", name: "COLONIA TASTE VELVET  200ML CYZONE", price: 7.99, img: "img/4037.jpg", desc: "Colonia corporal femenina (body splash) de 200 ml que destaca por su aroma frutal, dulce y altamente cremoso (estilo gourmand), inspirado en la repostería fina.  Al ser una colonia refrescante, su duración aproximada en la piel es de 3 horas. Su estela es ligera y suave, ideal para sentirse fresca después del baño o antes de dormir.", disponible: true },
+            { id: "PER-M-120", category: "perfumes mujer", name: "SPLASH RED ROSE 200ML ÉSIKA", price: 8.99, img: "img/4038.jpg", desc: "Despierta tu sensualidad y pasión con su exquisito aroma floral.", disponible: true },
+            { id: "PER-H-57", category: "perfumes hombre", name: "COLONIA MEN ACTIVE 200ML ÉSIKA", price: 8.99, img: "img/4039.jpg", desc: "Colonia refrescante masculina , diseñada principalmente como un splash corporal para el uso diario y frecuente.", disponible: true },
+            { id: "VAR-1", category: "varios", name: "EGO FOR MEN GEL VITAMIN + CARE 500 ML", price: 5.50, img: "img/7861001365290.jpg", desc: "Fijadores capilares masculinos más populares del mercado, diseñado para ofrecer una fijación de larga duración (hasta 24 horas) sin dejar residuos blancos ni sensación pegajosa.", disponible: true },
+            { id: "VAR-2", category: "varios", name: "GEL DE CABELLO ATTRACTION EGO 500 ML", price: 5.50, img: "img/7861001362015.jpg", desc: "Fijadores capilares masculinos más populares del mercado, diseñado para ofrecer una fijación de larga duración (hasta 24 horas) sin dejar residuos blancos ni sensación pegajosa.", disponible: true },
+            { id: "VAR-3", category: "varios", name: "EGO GEL CAPILAR ATTRACTION 20ML", price: 2.50, img: "img/7861001362107.jpg", desc: "Fijadores capilares masculinos más populares del mercado, diseñado para ofrecer una fijación de larga duración (hasta 24 horas) sin dejar residuos blancos ni sensación pegajosa.", disponible: true },
+            { id: "VAR-4", category: "varios", name: "SHAMPOO SEDAL ZERO CASPA 340ML", price: 4.90, img: "img/7506306237971.jpg", desc: "La Fórmula Exclusiva De Sedal Caspa Control, Contiene Zinc Piritiona, Un Componente Eficaz Contra La Caspa, Que Combinado Con Un Complejo Humectante Deja Tu Pelo Suave Y Libre De Señales De Caspa, Para Que Luzca Siempre Saludable", disponible: true },
+            { id: "VAR-5", category: "varios", name: "CREMA PARA PEINAR RIZOS OBEDIENTES SEDAL 300 ML", price: 4.75, img: "img/7501056340131.jpg", desc: "Crema De Peinar Rizos Obedientes SEDAL 300 ml: Define y controla tus rizos con esta crema enriquecida con nutrientes esenciales. Hidrata, reduce el frizz y proporciona fijación duradera sin residuos. Ideal para uso diario, deja tus rizos suaves, brillantes y perfectamente definidos", disponible: true },
+            { id: "VAR-6", category: "varios", name: "DESODORANTE EN AEROSOL ANTITRANSPIRANTE PARA MUJER CLINICAL EXTRA DRY REXONA 150 ML", price: 4.90, img: "img/7891150064300.jpg", desc: "Protección clínica avanzada para sudoración extrema. Mantente seco y seguro con hasta 96 horas de defensa contra la transpiración, incluso en situaciones de alta exigencia", disponible: true },
+            { id: "PIEL-61", category: "cuida tu piel", name: "LOCIÓN PERFUMADA PARA EL CUERPO SECRET FANTASY DREAMS 90ML AVON", price: 3.49, img: "img/7909189215614.jpg", desc: "FÓRMULA SUAVE: Ideal para el cuidado diario, ayuda a mantener la piel saludable y protegida contra la resequedad. Deja la piel perfumada con una sensación de suavidad y frescura, adecuada para todo tipo de piel.", disponible: true },
+            { id: "PIEL-62", category: "cuida tu piel", name: "CREMA DE MANOS BODY SPA CACAO 50G YAMBAL", price: 6.99, img: "img/0014316.jpg", desc: "Crema de manos con manteca de cacao, formulada para combatir y/o prevenir la resequedad extrema. Aporta una hidratación duradera hasta por 48 horas, y forma una barrera que retiene la humedad, aliviando molestias y ayudando a que la piel se sienta renovada. Su textura cremosa se desliza delicadamente, dejando la piel suave, flexible y aterciopelada.", disponible: true },
+            { id: "PIEL-63", category: "cuida tu piel", name: "LOCIÓN PERFUMADA SATIN ROUGE 130ML L'BEL", price: 5.99, img: "img/4047.jpg", desc: "Crema corporal hidratante de 130 ml diseñada para suavizar la piel e intensificar el aroma de la fragancia homónima.  Proporciona hidratación suave para el cuidado diario y ayuda a fijar y prolongar la estela del perfume en el cuerpo.", disponible: true },
+            { id: "PIEL-64", category: "cuida tu piel", name: "LOCIÓN CORPORAL SWEET BLACK EXCLUSIVE 130 ML CYZONE", price: 5.99, img: "img/4048.jpg", desc: "Loción hidratante diseñada para suavizar la piel y prolongar la fragancia dulce y elegante de la línea Sweet Black Exclusive. Su fórmula de hidratación profunda deja la piel suave, luminosa y con un brillo natural sin sensación grasosa.", disponible: true },
+            { id: "PIEL-65", category: "cuida tu piel", name: "CREMA DE MANOS UÑA DE GATO 50G YANBAL", price: 6.99, img: "img/0014139.jpg", desc: "Crema de manos con extracto 100% natural de uña de gato, planta amazónica reconocida en la medicina ancestral por sus efectos hidratantes y reparadores que mantienen la apariencia saludable de la piel. Fórmula diseñada para piel seca y extra seca que actúa contra descamaciones, asperezas y opacidad, dejando la piel saludable y radiante.", disponible: true },
+            { id: "PIEL-66", category: "cuida tu piel", name: "IMARI FREE BODY LOTION 90 ML AVON", price: 3.49, img: "img/7909189357468.jpg", desc: "Una fragancia fresca con notas florales y chypre. La sensualidad libre, como las olas del mar, se despierta con la nota fresca y duradera de las algas marinas laminarias, realzadas con el aceite de bergamota italiana y el ambar.", disponible: true },
+            { id: "PIEL-67", category: "cuida tu piel", name: "LOCIÓN DE SEDA MAGNOLIA Y VAINILLA CREMA ILUMINADORA PERFUMADA 210G YANBAL", price: 9.99, img: "img/0013186.jpg", desc: "Una crema hidratante con textura suave y sedosa, y un acabado perlado que le dará un brillo especial a tu piel. Un aroma delicioso a Magnolia y vainilla perfecto para tardes románticas llenas de sensualidad.", disponible: true },
+            { id: "PER-M-121", category: "perfumes mujer", name: "SOY SEXY COLONIA PARA MUJER 200ML YANBAL,", price: 10.99, img: "img/0013119.jpg", desc: "Una colonia para mujer perfecta para ser quien quieras ser. Soy Sexy es un aroma para esos días llenos de actitud en los que quieres sentirte sexy. Un aroma ambarado floral que combina las notas de flor de neroli, madera de sándalo y musk.Su intensidad ligera es perfecta para usar a diario.", disponible: true },
+            { id: "PER-M-122", category: "perfumes mujer", name: "AGUA DE SEDA COLONIA 200ML YANBAL", price: 10.99, img: "img/0014188.jpg", desc: "Es una fragancia femenina de edición limitada con un aroma dulce y cálido, creada como el complemento ideal para la línea corporal Loción de Seda", disponible: true },
+            { id: "PER-M-123", category: "perfumes mujer", name: "MIX & CHIC BERRY TONIC COLONIA 200ML YANBAL", price: 10.99, img: "img/0013395.jpg", desc: "Colonia con aroma fresco y chispeante con notas de jugosos frutos rojos, flor de cerezo y un fondo dulce de merengue. ¡Una revolución de frutas suculentas que te sorprenderá!", disponible: true },
+            { id: "PER-M-124", category: "perfumes mujer", name: "LESSENCE ORQUÍDEA EXÓTICA COLONIA 200ML YANBAL", price: 10.99, img: "img/0013557.jpg", desc: "Un aroma floral maderoso, exótico e impactante. Con notas de osmanthus, orquídea y mimosa. Su intensidad ligera la convierte en la opción ideal para que vivas la eterna primavera cerca de ti todos los días.", disponible: true },
+            { id: "PER-M-125", category: "perfumes mujer", name: "SENSES SPRAY CORPORAL PIÑA ROSADA Y GUAYABA 200ML AVON", price: 5.99, img: "img/7909189225972.jpg", desc: "Es una colonia refrescante en formato atomizador de 200 ml pensada para usar después del baño o durante el día. Pertenece a la familia olfativa frutal y combina la dulzura jugosa de la piña rosada con el toque exótico y ligeramente ácido de la guayaba", disponible: true },
+        ];
+
+        let carrito = {};
+        let cantidadesSeleccionadas = {};
+        let categoriaActual = 'todos';
+
+        document.addEventListener("DOMContentLoaded", function() {
+            renderizarCatalogo(productos);
+            actualizarBadgeCarrito();
+            cargarFestividadGuardada();
+        });
+
+        function renderizarCatalogo(lista) {
+            const contenedor = document.getElementById("catalogo");
+            contenedor.innerHTML = "";
+
+            if (lista.length === 0) {
+                contenedor.innerHTML = "<p style='grid-column: 1/-1; text-align: center; padding: 40px; color: #64748b;'>No se encontraron productos en esta categoría.</p>";
+                return;
+            }
+
+            lista.forEach(prod => {
+                const qtyActual = cantidadesSeleccionadas[prod.id] || 1;
+                const estaAgotado = !prod.disponible;
+                
+                // Asegurar ruta de carpeta img/ para que carguen correctamente
+                const rutaImagen = prod.img.startsWith("http") || prod.img.startsWith("img/") ? prod.img : "img/" + prod.img;
+
+                const card = document.createElement("div");
+                card.className = `card ${estaAgotado ? 'agotado' : ''}`;
+                card.innerHTML = `
+                    <div class="image-container">
+                        <img src="${rutaImagen}" alt="${prod.name}" onclick="abrirZoom('${prod.id}')" onerror="this.src='https://placehold.co/300x300/1b2a38/ffffff?text=Sin+Imagen'">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-header-tags">
+                                <span class="card-badge">${prod.category}</span>
+                                <span class="stock-badge ${estaAgotado ? 'stock-agotado' : 'stock-disponible'}">
+                                    <i class="fa-solid ${estaAgotado ? 'fa-circle-xmark' : 'fa-circle-check'}"></i> 
+                                    ${estaAgotado ? 'Agotado' : 'Disponible'}
+                                </span>
+                            </div>
+                            <h3 class="card-title">${prod.name}</h3>
+                            <p class="card-description">${prod.desc}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-and-qty">
+                                <span class="price">$${parseFloat(prod.price).toFixed(2)}</span>
+                                <div class="card-qty-selector">
+                                    <button onclick="cambiarCantidadTemporal('${prod.id}', -1)">-</button>
+                                    <span id="qty-${prod.id}">${qtyActual}</span>
+                                    <button onclick="cambiarCantidadTemporal('${prod.id}', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="card-actions-row">
+                                <button class="btn-add-cart" onclick="agregarAlCarrito('${prod.id}')">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                                <a class="btn-whatsapp" href="https://wa.me/593985282615?text=${encodeURIComponent('Hola They & Them Bazar Novedades, me interesa: ' + prod.name + ' (' + prod.id + ')')}" target="_blank">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contenedor.appendChild(card);
+            });
+        }
+
+        function cambiarCantidadTemporal(id, cambio) {
+            let actual = cantidadesSeleccionadas[id] || 1;
+            actual += cambio;
+            if (actual < 1) actual = 1;
+            cantidadesSeleccionadas[id] = actual;
+            const spanQty = document.getElementById(`qty-${id}`);
+            if (spanQty) spanQty.textContent = actual;
+        }
+
+        function filtrarCategoria(cat, btnElement) {
+            categoriaActual = cat.toLowerCase();
+            document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+            if (btnElement) btnElement.classList.add("active");
+            filtrarProductos();
+        }
+
+        function filtrarProductos() {
+            const texto = document.getElementById("buscador").value.toLowerCase().trim();
+            const filtrados = productos.filter(p => {
+                const coincideCat = (categoriaActual === 'todos') || (p.category.toLowerCase() === categoriaActual);
+                const coincideTexto = p.name.toLowerCase().includes(texto) || 
+                                     p.id.toLowerCase().includes(texto) || 
+                                     p.desc.toLowerCase().includes(texto);
+                return coincideCat && coincideTexto;
+            });
+            renderizarCatalogo(filtrados);
+        }
+
+        function agregarAlCarrito(id) {
+            const prod = productos.find(p => p.id === id);
+            if (!prod || !prod.disponible) return;
+
+            const qty = cantidadesSeleccionadas[id] || 1;
+            if (carrito[id]) {
+                carrito[id].cantidad += qty;
+            } else {
+                carrito[id] = { ...prod, cantidad: qty };
+            }
+            cantidadesSeleccionadas[id] = 1;
+            const spanQty = document.getElementById(`qty-${id}`);
+            if (spanQty) spanQty.textContent = 1;
+
+            actualizarBadgeCarrito();
+        }
+
+        function actualizarBadgeCarrito() {
+            const totalItems = Object.values(carrito).reduce((acc, item) => acc + item.cantidad, 0);
+            document.getElementById("contador-carrito").textContent = totalItems;
+        }
+
+        function abrirModalCarrito() {
+            const modal = document.getElementById("modalCarrito");
+            const lista = document.getElementById("listaCarrito");
+            const totalSpan = document.getElementById("totalCarrito");
+            lista.innerHTML = "";
+
+            let total = 0;
+            const items = Object.values(carrito);
+
+            if (items.length === 0) {
+                lista.innerHTML = "<p style='text-align:center; color:#64748b; padding:20px;'>Tu carrito está vacío.</p>";
+            } else {
+                items.forEach(item => {
+                    const subtotal = item.price * item.cantidad;
+                    total += subtotal;
+                    const div = document.createElement("div");
+                    div.className = "cart-item";
+                    div.innerHTML = `
+                        <div class="cart-item-info">
+                            <span class="cart-item-title">${item.name}</span>
+                            <span class="cart-item-price">$${item.price.toFixed(2)} x ${item.cantidad} = $${subtotal.toFixed(2)}</span>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button class="cart-qty-btn" onclick="modificarCantidadCarrito('${item.id}', -1)">-</button>
+                            <span>${item.cantidad}</span>
+                            <button class="cart-qty-btn" onclick="modificarCantidadCarrito('${item.id}', 1)">+</button>
+                            <button class="btn-remove" onclick="eliminarDelCarrito('${item.id}')"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    `;
+                    lista.appendChild(div);
+                });
+            }
+
+            totalSpan.textContent = total.toFixed(2);
+            modal.style.display = "flex";
+        }
+
+        function cerrarModalCarrito() {
+            document.getElementById("modalCarrito").style.display = "none";
+        }
+
+        function modificarCantidadCarrito(id, cambio) {
+            if (carrito[id]) {
+                carrito[id].cantidad += cambio;
+                if (carrito[id].cantidad <= 0) {
+                    delete carrito[id];
+                }
+            }
+            actualizarBadgeCarrito();
+            abrirModalCarrito();
+        }
+
+        function eliminarDelCarrito(id) {
+            delete carrito[id];
+            actualizarBadgeCarrito();
+            abrirModalCarrito();
+        }
+
+        function enviarPedidoWhatsApp() {
+            const items = Object.values(carrito);
+            if (items.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
+
+            let mensaje = "¡Hola *They & Them Bazar Novedades*! Deseo realizar el siguiente pedido:\n\n";
+            let total = 0;
+
+            items.forEach((item, index) => {
+                const subtotal = item.price * item.cantidad;
+                total += subtotal;
+                mensaje += `${index + 1}. *${item.name}* (${item.id})\n   Cantidad: ${item.cantidad} | Subtotal: $${subtotal.toFixed(2)}\n`;
+            });
+
+            mensaje += `\n*TOTAL A PAGAR: $${total.toFixed(2)}*\n\nPor favor, indíquenme la cuenta para la transferencia o confirmación de envío.`;
+
+            const url = `https://wa.me/593985282615?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, "_blank");
+        }
+
+        // --- ZOOM Y VISUALIZACIÓN COMPLETA DE CARACTERÍSTICAS ---
+        function abrirZoom(id) {
+            const prod = productos.find(p => p.id === id);
+            if (!prod) return;
+
+            // Extraer solo el código limpio sin la extensión ni directorios (ej: 0014234)
+            let codigoLimpio = prod.img.replace(/\.[^/.]+$/, "").replace(/^.*[\\\/]/, '');
+            let rutaImagen = prod.img.startsWith("http") || prod.img.startsWith("img/") ? prod.img : "img/" + prod.img;
+
+            document.getElementById("zoomTituloModal").textContent = prod.name;
+            document.getElementById("zoomImg").src = rutaImagen;
+            document.getElementById("zoomImg").onerror = function() { this.src='https://placehold.co/300x300/1b2a38/ffffff?text=Sin+Imagen'; };
+            document.getElementById("zoomNombre").textContent = prod.name;
+            document.getElementById("zoomId").textContent = codigoLimpio;
+            document.getElementById("zoomCat").textContent = prod.category;
+            document.getElementById("zoomDesc").textContent = prod.desc;
+            document.getElementById("zoomStock").textContent = prod.disponible ? "Disponible en stock" : "Agotado temporalmente";
+            document.getElementById("zoomStock").style.color = prod.disponible ? "#16a34a" : "#dc2626";
+            document.getElementById("zoomPrecio").textContent = parseFloat(prod.price).toFixed(2);
+
+            document.getElementById("zoomModal").style.display = "flex";
+        }
+
+        function cerrarZoom() {
+            document.getElementById("zoomModal").style.display = "none";
+        }
+
+        function cerrarZoomFuera(event) {
+            if (event.target.id === "zoomModal") {
+                cerrarZoom();
+            }
+        }
+
+        // --- CONTROL DE PANEL DE ADMINISTRADOR Y FESTIVIDADES ---
+        function abrirAdminModal() {
+            document.getElementById("adminModal").style.display = "flex";
+            if (sessionStorage.getItem("adminLogueado") === "true") {
+                document.getElementById("adminLoginView").style.display = "none";
+                document.getElementById("adminControlView").style.display = "block";
+            } else {
+                document.getElementById("adminLoginView").style.display = "block";
+                document.getElementById("adminControlView").style.display = "none";
+                document.getElementById("adminPassInput").value = "";
+            }
+        }
+
+        function cerrarAdminModal() {
+            document.getElementById("adminModal").style.display = "none";
+        }
+
+        function verificarPasswordAdmin() {
+            const pass = document.getElementById("adminPassInput").value;
+            if (pass === "admin123") {
+                sessionStorage.setItem("adminLogueado", "true");
+                document.getElementById("adminLoginView").style.display = "none";
+                document.getElementById("adminControlView").style.display = "block";
+            } else {
+                alert("Contraseña incorrecta.");
+            }
+        }
+
+        function guardarFestividad() {
+            const festivo = document.getElementById("selectFestividad").value;
+            localStorage.setItem("festividadActiva", festivo);
+            aplicarDisenoFestivo(festivo);
+            cerrarAdminModal();
+            alert("¡Diseño festivo aplicado con éxito!");
+        }
+
+        function cargarFestividadGuardada() {
+            const festivoGuardado = localStorage.getItem("festividadActiva") || "ninguno";
+            document.getElementById("selectFestividad").value = festivoGuardado;
+            aplicarDisenoFestivo(festivoGuardado);
+        }
+
+        function aplicarDisenoFestivo(tipo) {
+            const banner = document.getElementById("festivoBanner");
+            const header = document.getElementById("headerWrapper");
+            const infoBanner = document.getElementById("infoBanner");
+            const controls = document.getElementById("controlsSection");
+            const footer = document.getElementById("footerSite");
+            const efectoBox = document.getElementById("efectoBox");
+            const body = document.body;
+            
+            banner.style.display = "none";
+            efectoBox.style.display = "none";
+            efectoBox.innerHTML = "";
+            body.style.background = "#f4f6f9";
+            header.style.background = "#1b2a38";
+            infoBanner.style.borderColor = "#8b00ff";
+            controls.style.background = "#2c164a";
+            footer.style.background = "#1b2a38";
+            footer.style.borderColor = "#8b00ff";
+
+            if (tipo === "findeanio") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #b45309 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-champagne-glasses" style="color:#ffd700;"></i> <span>¡FELIZ FIN DE AÑO Y PRÓSPERO AÑO NUEVO <span class="texto-luminoso-2027">2027</span>! Pedidos: 0985282615</span> <i class="fa-solid fa-star" style="color:#ffd700;"></i>';
+                body.style.background = "linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%)";
+                header.style.background = "#090d16";
+                controls.style.background = "#1e1b4b";
+                infoBanner.style.borderColor = "#ffd700";
+                footer.style.background = "#090d16";
+                footer.style.borderColor = "#ffd700";
+
+                const items = [
+                    '<span class="texto-luminoso-2027" style="font-size:26px;">2027</span>',
+                    '✨', '⭐', '🌟',
+                    '<span class="texto-luminoso-2027" style="font-size:22px;">2027</span>',
+                    '💫', '✨'
+                ];
+                crearEfectosMixtos(items, 14, false);
+
+            } else if (tipo === "carnaval") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #0284c7 0%, #10b981 50%, #f59e0b 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-mask"></i> <span>¡A DISFRUTAR EL CARNAVAL DE ECUADOR! Promociones llenas de color. Pedidos: 0985282615</span> <i class="fa-solid fa-droplet"></i>';
+                body.style.background = "linear-gradient(180deg, #e0f2fe 0%, #fef9c3 100%)";
+                header.style.background = "#0369a1";
+                controls.style.background = "#0f766e";
+                infoBanner.style.borderColor = "#f59e0b";
+                footer.style.background = "#0369a1";
+                footer.style.borderColor = "#f59e0b";
+
+                const items = ['🤡', '🎭', '💧', '💦', '🤡', '🎭', '💧'];
+                crearEfectosMixtos(items, 14, false);
+
+            } else if (tipo === "sanvalentin") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #be185d 0%, #e11d48 50%, #fb7185 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-heart"></i> <span>¡FELIZ 14 DE FEBRERO - DÍA DEL AMOR Y LA AMISTAD! Detalles y perfumes ideales. Pedidos: 0985282615</span> <i class="fa-solid fa-gift"></i>';
+                body.style.background = "linear-gradient(180deg, #ffe4e6 0%, #fce7f3 100%)";
+                header.style.background = "#881337";
+                controls.style.background = "#9f1239";
+                infoBanner.style.borderColor = "#fb7185";
+                footer.style.background = "#881337";
+                footer.style.borderColor = "#fb7185";
+
+                const items = ['❤️', '🍫', '🎀', '🧴', '💖', '🍫', '🎀', '💐'];
+                crearEfectosMixtos(items, 14, false);
+
+            } else if (tipo === "viernessanto") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #334155 0%, #4c1d95 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-cross"></i> <span>VIERNES SANTO - Tiempo de paz y reflexión en familia. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #e2e8f0 0%, #ede9fe 100%)";
+                header.style.background = "#2e1065";
+                controls.style.background = "#4c1d95";
+                infoBanner.style.borderColor = "#a78bfa";
+                footer.style.background = "#2e1065";
+                footer.style.borderColor = "#a78bfa";
+
+                const coronaSVG = '<svg width="34" height="22" viewBox="0 0 100 60"><ellipse cx="50" cy="30" rx="40" ry="15" fill="none" stroke="#5c4033" stroke-width="6"/><path d="M20 20 L12 10 M40 15 L38 4 M60 15 L63 4 M80 20 L88 10 M30 42 L25 53 M70 42 L75 53" stroke="#3e2723" stroke-width="4" stroke-linecap="round"/></svg>';
+                const items = ['☁️', '✝️', coronaSVG, '☁️', '✝️', coronaSVG];
+                crearEfectosMixtos(items, 12, false);
+
+            } else if (tipo === "diadeltrabajador") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #1d4ed8 0%, #b91c1c 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-briefcase"></i> <span>¡FELIZ DÍA DEL TRABAJADOR! Homenaje a todas las profesiones y oficios. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #dbeafe 0%, #f1f5f9 100%)";
+                header.style.background = "#1e3a8a";
+                controls.style.background = "#1d4ed8";
+                infoBanner.style.borderColor = "#ef4444";
+                footer.style.background = "#1e3a8a";
+                footer.style.borderColor = "#ef4444";
+
+                const items = ['👨‍⚕️', '👩‍🏫', '👷‍♂️', '👨‍🍳', '👩‍🔧', '👨‍🚒', '👮‍♀️', '👩‍💻', '👨‍🌾', '👩‍🎨'];
+                crearEfectosMixtos(items, 15, false);
+
+            } else if (tipo === "pichincha") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(90deg, #eab308 0%, #1d4ed8 55%, #dc2626 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-flag"></i> <span>¡VIVA EL 24 DE MAYO - BATALLA DE PICHINCHA! Orgullo Ecuatoriano. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #fef9c3 0%, #dbeafe 50%, #fee2e2 100%)";
+                header.style.background = "#1e3a8a";
+                controls.style.background = "#854d0e";
+                infoBanner.style.borderColor = "#eab308";
+                footer.style.background = "#1e3a8a";
+                footer.style.borderColor = "#dc2626";
+
+                const banderaEscudo = '<div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.85);padding:3px 7px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.2);"><span style="font-size:24px;">🇪🇨</span><span style="font-size:18px;">🛡️🦅</span></div>';
+                const items = [banderaEscudo, '🇪🇨', banderaEscudo, '🇪🇨'];
+                crearEfectosMixtos(items, 10, true);
+
+            } else if (tipo === "primergrito") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(90deg, #dc2626 0%, #1d4ed8 50%, #dc2626 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-landmark"></i> <span>10 DE AGOSTO - PRIMER GRITO DE INDEPENDENCIA (QUITO LUZ DE AMÉRICA). Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #fee2e2 0%, #dbeafe 100%)";
+                header.style.background = "#7f1d1d";
+                controls.style.background = "#1e3a8a";
+                infoBanner.style.borderColor = "#dc2626";
+                footer.style.background = "#7f1d1d";
+                footer.style.borderColor = "#1e3a8a";
+
+                const monumento10Agosto = '<div style="display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.85);padding:4px 8px;border-radius:8px;font-size:11px;font-weight:bold;color:#1e3a8a;"><span style="font-size:22px;">🗽🔥🇪🇨</span><span>10 AGOSTO</span></div>';
+                const items = [monumento10Agosto, '🔥', '📜', '🇪🇨', monumento10Agosto];
+                crearEfectosMixtos(items, 10, true);
+
+            } else if (tipo === "guayaquil") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(90deg, #0284c7 0%, #ffffff 50%, #0284c7 100%)";
+                banner.style.color = "#0c4a6e";
+                banner.innerHTML = '<i class="fa-solid fa-star"></i> <span>¡VIVA LA INDEPENDENCIA DE GUAYAQUIL! Saludos a la Perla del Pacífico. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #e0f2fe 0%, #ffffff 100%)";
+                header.style.background = "#0369a1";
+                controls.style.background = "#0284c7";
+                infoBanner.style.borderColor = "#38bdf8";
+                footer.style.background = "#0369a1";
+                footer.style.borderColor = "#38bdf8";
+
+                const banderaGye = '<div style="display:flex;align-items:center;background:#0284c7;color:white;padding:3px 8px;border-radius:6px;font-size:14px;font-weight:bold;">⭐ 9 OCT ⭐</div>';
+                const items = [banderaGye, '🌟', '⛵', banderaGye];
+                crearEfectosMixtos(items, 10, true);
+
+            } else if (tipo === "difuntos") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-cross"></i> <span>2 DE NOVIEMBRE - DÍA DE LOS DIFUNTOS Y TRADICIONES DEL ECUADOR. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #cbd5e1 0%, #e2e8f0 100%)";
+                header.style.background = "#0f172a";
+                controls.style.background = "#312e81";
+                infoBanner.style.borderColor = "#6366f1";
+                footer.style.background = "#0f172a";
+                footer.style.borderColor = "#6366f1";
+
+                const lapidaSVG = '<svg width="32" height="38" viewBox="0 0 60 70"><path d="M10 65 L10 25 A20 20 0 0 1 50 25 L50 65 Z" fill="#64748b" stroke="#334155" stroke-width="3"/><rect x="5" y="62" width="50" height="6" fill="#475569"/><path d="M30 16 L30 34 M23 23 L37 23" stroke="#e2e8f0" stroke-width="3"/></svg>';
+                const items = ['✝️', lapidaSVG, '🕯️', '✝️', lapidaSVG];
+                crearEfectosMixtos(items, 12, false);
+
+            } else if (tipo === "cuenca") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(90deg, #dc2626 0%, #eab308 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-music"></i> <span>¡VIVA LA INDEPENDENCIA DE CUENCA! Tradición y alegría morlaca. Pedidos: 0985282615</span>';
+                body.style.background = "linear-gradient(180deg, #fef3c7 0%, #fee2e2 100%)";
+                header.style.background = "#991b1b";
+                controls.style.background = "#b45309";
+                infoBanner.style.borderColor = "#eab308";
+                footer.style.background = "#991b1b";
+                footer.style.borderColor = "#eab308";
+
+                const cholaCuencana = '<div style="display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.85);padding:4px 8px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.15);"><span style="font-size:26px;">👒💃🌺</span><span style="font-size:10px;font-weight:bold;color:#991b1b;">CUENCA</span></div>';
+                const items = [cholaCuencana, '💃', '🎶', '🌺', cholaCuencana];
+                crearEfectosMixtos(items, 10, true);
+
+            } else if (tipo === "navidad") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #990000 0%, #15803d 50%, #b45309 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-tree"></i> <span>¡FELIZ NAVIDAD! Arma tus anchetas y regalos especiales. Pedidos: 0985282615</span> <i class="fa-solid fa-candy-cane"></i>';
+                body.style.background = "linear-gradient(180deg, #fef2f2 0%, #f0fdf4 100%)";
+                header.style.background = "#7f1d1d";
+                controls.style.background = "#14532d";
+                infoBanner.style.borderColor = "#dc2626";
+                footer.style.background = "#7f1d1d";
+                footer.style.borderColor = "#15803d";
+
+                const bastonSVG = '<svg width="26" height="34" viewBox="0 0 40 60"><path d="M25 55 L25 20 A10 10 0 0 0 5 20" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/><path d="M25 55 L25 20 A10 10 0 0 0 5 20" fill="none" stroke="#dc2626" stroke-width="7" stroke-dasharray="6,6" stroke-linecap="round"/></svg>';
+                const items = ['❄️', bastonSVG, '🎄', '❅', bastonSVG, '🎄', '❄️'];
+                crearEfectosMixtos(items, 15, false);
+
+            } else if (tipo === "blackfriday") {
+                banner.style.display = "flex";
+                banner.style.background = "linear-gradient(135deg, #000000 0%, #b91c1c 100%)";
+                banner.innerHTML = '<i class="fa-solid fa-fire"></i> <span>¡BLACK FRIDAY! Descuentos explosivos por tiempo limitado. Pedidos: 0985282615</span> <i class="fa-solid fa-percent"></i>';
+                body.style.background = "linear-gradient(180deg, #18181b 0%, #27272a 100%)";
+                header.style.background = "#09090b";
+                controls.style.background = "#18181b";
+                infoBanner.style.borderColor = "#ef4444";
+                footer.style.background = "#09090b";
+                footer.style.borderColor = "#ef4444";
+
+                const items = [
+                    '🔥',
+                    '<span style="background:#dc2626;color:white;padding:2px 6px;border-radius:6px;font-weight:900;font-size:15px;">-50%</span>',
+                    '💯',
+                    '🔥',
+                    '<span style="background:#eab308;color:black;padding:2px 6px;border-radius:6px;font-weight:900;font-size:15px;">% OFF</span>',
+                    '70%',
+                    '🔥'
+                ];
+                crearEfectosMixtos(items, 15, false);
+            }
+        }
+
+        function crearEfectosMixtos(elementosHTML, cantidad, conFlameo) {
+            const efectoBox = document.getElementById("efectoBox");
+            efectoBox.style.display = "block";
+            for (let i = 0; i < cantidad; i++) {
+                let el = document.createElement("div");
+                el.className = "elemento-animado" + (conFlameo ? " efecto-flameo" : "");
+                el.innerHTML = elementosHTML[i % elementosHTML.length];
+                el.style.left = ((i * (95 / cantidad)) + 2) + "%";
+                el.style.animationDuration = (Math.random() * 5 + 5) + "s";
+                el.style.animationDelay = (Math.random() * 4) + "s";
+                el.style.fontSize = (Math.random() * 10 + 18) + "px";
+                efectoBox.appendChild(el);
+            }
+        }
+    </script>
+</body>
+</html>
